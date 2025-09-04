@@ -10,16 +10,16 @@ let discountRate = 0.10
 
 //Step 2: Calculate Pricing & Profit Metrics
 let discountedPrice = basePrice * (1-discountRate)
-let finalPriceWithTax = discountedPrice * (1+salesTaxRate).toFixed(2)
-let profitPerUnit = (finalPriceWithTax - costPerUnit).toFixed(2)
+let finalPriceWithTax = discountedPrice * (1+salesTaxRate)
+let profitPerUnit = (finalPriceWithTax - costPerUnit)
 let breakEvenUnits = Math.ceil(fixedMonthlyCosts / profitPerUnit)
 let isProfitablePerUnit = profitPerUnit > 0
 
 //Step 3 Print to Console
 console.log(`Product Name: ${productName}`)
-console.log(`Discounted Price: (Before Tax) ${discountedPrice}`)
-console.log(`Final Price With Tax: ${finalPriceWithTax}`)   
-console.log(`Profit Per Unit: ${profitPerUnit}`)
+console.log(`Discounted Price: (Before Tax) ${discountedPrice.toFixed(2)}`)
+console.log(`Final Price With Tax: ${finalPriceWithTax.toFixed(2)}`)   
+console.log(`Profit Per Unit: ${profitPerUnit.toFixed(2)}`)
 console.log(`Break-even units: ${breakEvenUnits}`)
 console.log(`Per-Unit profitability: ${isProfitablePerUnit}`)
 
